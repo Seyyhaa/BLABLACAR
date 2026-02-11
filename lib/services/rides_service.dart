@@ -19,13 +19,20 @@ class RidesService {
     List<Ride> rides,
     int requestedSeat,
   ) {
-    return rides.where((r) => r.remainingSeats == requestedSeat).toList();
+    return rides.where((r) => r.availableSeats >= requestedSeat).toList();
   }
 
   //
   //  filter the rides   with several optional criteria (flexible filter options)
   //
   static List<Ride> filterBy({Location? departure, int? seatRequested}) {
-    return [] ;
+    List<Ride> result = availableRides;
+    if (departure != null) {
+      return result = _filterByDeparture(result, departure);
+    }
+    if (seatRequested != null) {
+      return result = _filterBySeatRequested(result, seatRequested);
+    }
+    return result;
   }
 }
