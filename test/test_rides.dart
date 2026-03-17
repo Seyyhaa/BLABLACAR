@@ -1,14 +1,14 @@
-import 'package:blabla/models/ride/ride.dart';
+// import 'package:blabla/models/ride/ride.dart';
 
-import 'package:blabla/models/ride/locations.dart';
-import 'package:blabla/services/rides_service.dart';
+// import 'package:blabla/models/ride/locations.dart';
+// import 'package:blabla/services/rides_service.dart';
 
-void main() {
-  Location dijon = Location(country: Country.france, name: "Dijon");
+// void main() {
+//   Location dijon = Location(country: Country.france, name: "Dijon");
 
-  List<Ride> filteredRide = RidesService.filterBy(seatRequested: 2, departure: dijon);
+//   List<Ride> filteredRide = RidesService.filterBy(seatRequested: 2, departure: dijon);
 
-  for (Ride ride in filteredRide) {
-    print(ride);
-  }
-}
+//   for (Ride ride in filteredRide) {
+//     print(ride);
+//   }
+// }
