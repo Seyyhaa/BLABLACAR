@@ -8,7 +8,7 @@ class RidePreferenceState extends ChangeNotifier {
   RidePreference? currentPreference;
   List<RidePreference> history = [];
 
-  RidePreferenceState(this.repository) {
+  RidePreferenceState({required this.repository}) {
     _init();
   }
 
