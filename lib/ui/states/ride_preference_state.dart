@@ -15,10 +15,11 @@ class RidePreferenceState extends ChangeNotifier {
   }
 
   Future<void> _init() async {
+    history = await repository.loadRidePreference();
     notifyListeners();
   }
 
-  void selectedPreference(RidePreference preference){
+  void selectPreference(RidePreference preference){
     if (preference != currentPreference) {
       currentPreference = preference;
       history.add(preference);
