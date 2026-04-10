@@ -1,8 +1,7 @@
-import 'package:blabla/ui/states/ride_preference_state.dart';
+
 import 'package:blabla/ui/widgets/buttons/bla_button.dart';
 import 'package:blabla/ui/widgets/display/bla_divider.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import '../../../../model/ride/locations.dart';
 import '../../../../model/ride_pref/ride_pref.dart';
@@ -22,11 +21,12 @@ import '../seat/bla_seat_picker.dart';
 ///
 class BlaRidePreferencePicker extends StatefulWidget {
   final RidePreference? initRidePreference; // optional initial preference.
+  final int maxSeat;
 
   const BlaRidePreferencePicker({
     super.key,
     this.initRidePreference,
-    required this.onRidePreferenceSelected,
+    required this.onRidePreferenceSelected, required this.maxSeat,
   });
 
   final ValueChanged<RidePreference> onRidePreferenceSelected;
@@ -115,8 +115,7 @@ class _BlaRidePreferencePickerState extends State<BlaRidePreferencePicker> {
       AnimationUtils.createRightToLeftRoute(
         BlaSeatPicker(
           initSeats: requestedSeats,
-          maxSeat: context
-              .read<RidePreferenceState>().maxAllowedSeats,
+          maxSeat: widget.maxSeat,
         ),
       ),
     );

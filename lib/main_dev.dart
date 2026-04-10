@@ -20,7 +20,7 @@ List<InheritedProvider> get devProviders {
       create: (_) => RidePreferenceState(repository: ridePreferenceRepository),
     ),
   ];
-}
+} 
 
 void main() {
   mainCommon(devProviders);

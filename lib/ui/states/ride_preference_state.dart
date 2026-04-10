@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 class RidePreferenceState extends ChangeNotifier {
   final RidePreferenceRepository repository;
 
-
-  int get maxAllowedSeats => 8;
+  final int maxSeats = 8;
   RidePreference? currentPreference;
   List<RidePreference> history = [];
 
@@ -19,11 +18,11 @@ class RidePreferenceState extends ChangeNotifier {
     notifyListeners();
   }
 
-  void selectPreference(RidePreference preference){
+  void selectPreference(RidePreference preference) {
     if (preference != currentPreference) {
       currentPreference = preference;
       history.add(preference);
-      notifyListeners(); 
+      notifyListeners();
     }
   }
 }

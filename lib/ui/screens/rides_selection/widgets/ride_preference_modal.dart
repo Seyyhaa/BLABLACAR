@@ -56,6 +56,7 @@ class _RidePreferenceModalState extends State<RidePreferenceModal> {
                 child: BlaRidePreferencePicker(
                   initRidePreference: widget.initialPreference,
                   onRidePreferenceSelected: onRidePreferenceSelected,
+                  maxSeat: 8,
                 ),
               ),
             ),
